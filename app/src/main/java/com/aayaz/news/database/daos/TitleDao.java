@@ -1,5 +1,6 @@
 package com.aayaz.news.database.daos;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -29,7 +30,7 @@ public interface TitleDao {
     Title get(int id);
 
     @Query("SELECT * FROM Title LIMIT 1 ")
-    Title get();
+    LiveData<Title> get();
 
     @Query("DELETE FROM Title")
     int deleteAll();

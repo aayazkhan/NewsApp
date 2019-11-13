@@ -1,5 +1,6 @@
 package com.aayaz.news.database.daos;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -7,7 +8,6 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
 import com.aayaz.news.database.tables.Fact;
-import com.aayaz.news.database.tables.Title;
 
 import java.util.List;
 
@@ -18,19 +18,19 @@ public interface FactDao {
     void insert(Fact fact);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(List<Title> titles);
+    void insert(List<Fact> facts);
 
     @Delete
     void delete(Fact fact);
 
     @Delete
-    void delete(List<Title> notes);
+    void delete(List<Fact> facts);
 
     @Query("SELECT * FROM Fact where id=:id")
-    Title get(int id);
+    Fact get(int id);
 
     @Query("SELECT * FROM Fact ")
-    Title getAll();
+    LiveData<List<Fact>> getAll();
 
     @Query("DELETE FROM Fact")
     int deleteAll();
