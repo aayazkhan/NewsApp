@@ -11,6 +11,10 @@ import com.aayaz.news.database.tables.Fact;
 
 import java.util.List;
 
+/**
+ * Perform database operation for Fact table
+ */
+
 @Dao
 public interface FactDao {
 
@@ -19,15 +23,6 @@ public interface FactDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insert(List<Fact> facts);
-
-    @Delete
-    void delete(Fact fact);
-
-    @Delete
-    void delete(List<Fact> facts);
-
-    @Query("SELECT * FROM Fact where id=:id")
-    Fact get(int id);
 
     @Query("SELECT * FROM Fact ")
     LiveData<List<Fact>> getAll();

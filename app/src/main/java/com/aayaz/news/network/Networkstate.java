@@ -6,7 +6,9 @@ import android.net.NetworkInfo;
 
 public class Networkstate {
 
-    //Checking newtork connection
+    /**
+     * Checking newtork connection
+     */
     public static boolean haveNetworkConnection(Context con) {
         boolean haveConnectedWifi = false;
         boolean haveConnectedMobile = false;

@@ -4,6 +4,10 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+/**
+ * Fact table
+ */
+
 @Entity
 public class Title {
 

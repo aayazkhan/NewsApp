@@ -16,6 +16,10 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+/**
+ *  Fact data adapter to data in recycler view
+ */
+
 public class FactAdapter extends RecyclerView.Adapter<FactAdapter.MyViewHolder> {
 
     private Context context;
